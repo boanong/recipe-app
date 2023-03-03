@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+button {
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+  border: none;
+}
+

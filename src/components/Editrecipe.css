@@ -1,0 +1,14 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.edit-recipe {
+    height: 150vh;
+    width: 100vh;
+    margin: auto;
+    background-color: rgb(17, 74, 66);
+    color: rgb(232, 203, 160);
+    margin-top: 5px;
+}
+
