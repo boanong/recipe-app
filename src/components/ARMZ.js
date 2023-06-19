@@ -9,7 +9,7 @@ function ARMZ({ close }) {
         Close
       </button>
       <br />
-      <h2>New Recipe</h2>
+      <h2> Add New Recipe</h2>
       <br />
       Recipe Name: <input type="text" />
       <br />
