@@ -15,13 +15,15 @@ function ARMZ({ close }) {
       <br />
       Image Source: <input type="text" />
       <div>
-        OR <input type="file" />
+        Or <input type="file" />
       </div>
       <br />
       Recipe:
       <textarea cols={30} rows={20} />
       <br />
-      <button type="submit">Add To Recipes</button>
+      <button className="add-recipe-button" type="submit">
+        Add To Recipes
+      </button>
     </div>
   );
 }
