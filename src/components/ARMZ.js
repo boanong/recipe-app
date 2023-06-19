@@ -5,7 +5,7 @@ import './ARMZ.css';
 function ARMZ({ close }) {
   return (
     <div className="modal">
-      <button type="button" onClick={close}>
+      <button className="modal-button" type="button" onClick={close}>
         Close
       </button>
       <br />
@@ -14,7 +14,9 @@ function ARMZ({ close }) {
       Recipe Name: <input type="text" />
       <br />
       Image Source: <input type="text" />
-      OR <input type="file" />
+      <div>
+        OR <input type="file" />
+      </div>
       <br />
       Recipe:
       <textarea cols={30} rows={20} />
