@@ -9,33 +9,35 @@ import MyContext from '../context/FoodContext';
 import ARMZ from './ARMZ';
 import './foodContainer.css';
 import RecipeCard from './RecipeCard';
+import { updateFoodStorage } from '../services/utils';
+import EditForm from './EditForm/EditForm';
 
 export default function FoodContainer() {
   const { foodData, setFoodData } = useContext(MyContext);
+  const [showForm, setShowForm] = useState({
+    createNew: false,
+    editForm: false,
+  });
 
-  const deleteRecipe = (idx) =>
-    setFoodData([...foodData.filter((_, id) => idx !== id)]);
-
-  const [createModalDisplay, setCreateModalDisplay] = useState('none');
+  const deleteRecipe = (name) => {
+    const newFoodData = foodData.filter((food) => food.name !== name);
+    updateFoodStorage(newFoodData);
+    setFoodData([...newFoodData]);
+  };
 
   return (
     <>
-      <div style={{ display: createModalDisplay }}>
-        <ARMZ
-          close={() => {
-            setCreateModalDisplay('none');
-          }}
-        />
-      </div>
+      {showForm.createNew && <ARMZ setShowForm={setShowForm} />}
+      {showForm.editForm && <EditForm setShowForm={setShowForm} />}
       <div className="cards">
-        {foodData.map((item, index) => {
+        {foodData?.map((item, index) => {
           return (
             <RecipeCard
+              key={item.name + index}
               image={item.src}
               name={item.name}
-              onDelete={() => {
-                deleteRecipe(index);
-              }}
+              deleteRecipe={() => deleteRecipe(item.name)}
+              setShowForm={setShowForm}
             />
           );
         })}
@@ -43,9 +45,12 @@ export default function FoodContainer() {
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
         className="add-recipe"
-        onClick={() => {
-          setCreateModalDisplay('initial');
-        }}
+        onClick={() =>
+          setShowForm({
+            createNew: true,
+            editForm: false,
+          })
+        }
       >
         <i className="fa-solid fa-circle-plus" />
         <h3 className="add">Add a recipe </h3>

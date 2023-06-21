@@ -10,7 +10,8 @@ function Home() {
       <div className="landing">
         <div className="navbar">
           <div className="nav-elements">
-            <p>Home</p> <p>Menu</p> <p>Services</p> <p>About us </p>
+            <p className="nav-feature">Home</p> <p>Menu</p> <p>Services</p>{' '}
+            <p>About us </p>
           </div>
           <div className="icons">
             <i className="fa-brands fa-twitter" />

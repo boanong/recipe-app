@@ -1,32 +1,33 @@
 /* eslint-disable react/prop-types */
-import React, { useContext, useState } from 'react';
-import './ARMZ.css';
-import { getFoodStorage, updateFoodStorage } from '../services/utils';
-import MyContext from '../context/FoodContext';
+import React, { useContext } from 'react';
+import '../ARMZ.css';
+import { getFoodStorage, updateFoodStorage } from '../../services/utils';
+import MyContext from '../../context/FoodContext';
 
-function ARMZ({ setShowForm }) {
-  const [newFood, setNewFood] = useState({
-    name: '',
-    src: '',
-    recipe: '',
-  });
-
-  const { setFoodData } = useContext(MyContext);
+function EditForm({ setShowForm }) {
+  const { setFoodData, foodEdit, setFoodEdit } = useContext(MyContext);
 
   const handleFileUpload = (e) => {
     const url = URL.createObjectURL(e.target.files[0]);
 
-    setNewFood((prev) => ({ ...prev, src: url }));
+    setFoodEdit((prev) => ({ ...prev, src: url }));
   };
 
   const handleSubmit = () => {
-    if (!newFood.name || !newFood.src || !newFood.recipe) {
+    if (!foodEdit.name || !foodEdit.src || !foodEdit.recipe) {
       return;
     }
+    const foodName = JSON.parse(sessionStorage.getItem('foodName'));
+    const prevData = getFoodStorage();
 
-    const localData = getFoodStorage() || [];
+    const localData = prevData.map((item) => {
+      if (item.name === foodName) return foodEdit;
 
-    localData.push(newFood);
+      return item;
+    });
+
+    sessionStorage.removeItem('foodName');
+
     updateFoodStorage(localData);
     setFoodData(localData);
 
@@ -56,16 +57,18 @@ function ARMZ({ setShowForm }) {
       Recipe Name:
       <input
         type="text"
+        value={foodEdit.name}
         onChange={(e) =>
-          setNewFood((prev) => ({ ...prev, name: e.target.value }))
+          setFoodEdit((prev) => ({ ...prev, name: e.target.value }))
         }
       />
       <br />
       Image Source:{' '}
       <input
         type="url"
+        value={foodEdit.src}
         onChange={(e) =>
-          setNewFood((prev) => ({ ...prev, src: e.target.value }))
+          setFoodEdit((prev) => ({ ...prev, src: e.target.value }))
         }
       />
       <div>
@@ -81,8 +84,9 @@ function ARMZ({ setShowForm }) {
       <textarea
         cols={30}
         rows={20}
+        value={foodEdit.recipe}
         onChange={(e) =>
-          setNewFood((prev) => ({ ...prev, recipe: e.target.value }))
+          setFoodEdit((prev) => ({ ...prev, recipe: e.target.value }))
         }
       />
       <br />
@@ -97,4 +101,4 @@ function ARMZ({ setShowForm }) {
   );
 }
 
-export default ARMZ;
+export default EditForm;

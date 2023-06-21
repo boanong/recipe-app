@@ -8,6 +8,8 @@ body {
     background-color: rgb(232, 203, 160);
 }
 
+
+
 h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -42,6 +44,19 @@ h1 {
     gap: 100px;
     padding-left: 50px;
     color: white;
+}
+
+.nav-feature:hover {
+    cursor: pointer;
+
+}
+
+.nav-elements {
+}
+
+.nav-elements:hover {
+    cursor: pointer;
+
 }
 
 .recipe {
