@@ -23,7 +23,7 @@ function Home() {
           <div className="left-side-hero">
             <h1 className="hero">
               Cook anything and <br /> everything with <br /> our
-              <span className="recipe"> recipe </span>service
+              <span className="recipe"> recipe </span> recipe service
             </h1>
             <p className="tagline">Tired of waiting for your food? Cook it </p>
             <button className="get-start" type="button">
