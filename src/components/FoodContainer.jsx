@@ -42,7 +42,6 @@ export default function FoodContainer() {
           );
         })}
       </div>
-      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
         className="add-recipe"
         onClick={() =>

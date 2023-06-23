@@ -2,7 +2,6 @@ import React from 'react';
 import './Home.css';
 import heroimage from './heroimage.png';
 import FoodContainer from '../components/FoodContainer';
-import RecipeDescription from '../components/RecipeDetails';
 
 function Home() {
   return (
@@ -128,8 +127,6 @@ function Home() {
           <i className="fa-brands fa-tiktok" />
         </div>
       </div>
-
-      <RecipeDescription />
     </div>
   );
 }
