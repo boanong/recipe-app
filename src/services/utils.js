@@ -1,5 +1,5 @@
-export const updateFoodStorage = (update) =>
-  localStorage.setItem('foodData', JSON.stringify(update));
+export const saveToLocalStorage = (key, update) =>
+  localStorage.setItem(key, JSON.stringify(update));
 
-export const getFoodStorage = () =>
-  JSON.parse(localStorage.getItem('foodData'));
+export const getFromLocalStorage = (key) =>
+  JSON.parse(localStorage.getItem(key));

@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './ARMZ.css';
-import { getFoodStorage, updateFoodStorage } from '../services/utils';
-import MyContext from '../context/FoodContext';
+import { getFromLocalStorage, saveToLocalStorage } from '../services/utils';
+import { useMyContext } from '../context/FoodContext';
 
 function ARMZ({ setShowForm }) {
   const [newFood, setNewFood] = useState({
@@ -11,7 +11,7 @@ function ARMZ({ setShowForm }) {
     recipe: '',
   });
 
-  const { setFoodData } = useContext(MyContext);
+  const { setFoodData } = useMyContext();
 
   const handleFileUpload = (e) => {
     const url = URL.createObjectURL(e.target.files[0]);
@@ -24,10 +24,10 @@ function ARMZ({ setShowForm }) {
       return;
     }
 
-    const localData = getFoodStorage() || [];
+    const localData = getFromLocalStorage('foodData') || [];
 
     localData.push(newFood);
-    updateFoodStorage(localData);
+    saveToLocalStorage('foodData', localData);
     setFoodData(localData);
 
     setShowForm({

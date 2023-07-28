@@ -4,16 +4,16 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable react/no-array-index-key */
 // eslint-disable-next-line no-unused-vars
-import { useContext, useEffect, useState } from 'react';
-import MyContext from '../context/FoodContext';
+import { useState } from 'react';
+import { useMyContext } from '../context/FoodContext';
 import ARMZ from './ARMZ';
 import './foodContainer.css';
 import RecipeCard from './RecipeCard';
-import { updateFoodStorage } from '../services/utils';
+import { saveToLocalStorage } from '../services/utils';
 import EditForm from './EditForm/EditForm';
 
 export default function FoodContainer() {
-  const { foodData, setFoodData } = useContext(MyContext);
+  const { foodData, setFoodData } = useMyContext();
   const [showForm, setShowForm] = useState({
     createNew: false,
     editForm: false,
@@ -21,7 +21,7 @@ export default function FoodContainer() {
 
   const deleteRecipe = (name) => {
     const newFoodData = foodData.filter((food) => food.name !== name);
-    updateFoodStorage(newFoodData);
+    saveToLocalStorage('foodData', newFoodData);
     setFoodData([...newFoodData]);
   };
 

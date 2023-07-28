@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css';
 import heroimage from './heroimage.png';
 import FoodContainer from '../components/FoodContainer';
+import SearchForm from '../components/SearchForm/SearchForm';
 
 function Home() {
   return (
@@ -35,15 +36,9 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="search">
-        <div className="search__input">
-          <input
-            type="search"
-            className="search"
-            placeholder="Search a recipe"
-          />
-        </div>
-      </div>
+
+      <SearchForm />
+
       <div className="background">
         <div className="background-overlay" />
 

@@ -1,34 +1,12 @@
-/* eslint-disable react/jsx-no-constructed-context-values */
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
-import MyContext from './context/FoodContext';
 import Home from './Home/Home';
-// import data from './data/foodData.json';
+import FOOD_DATA from './data/foodData.json';
+import { getFromLocalStorage, saveToLocalStorage } from './services/utils';
 
+if (!getFromLocalStorage('foodData')) saveToLocalStorage('foodData', FOOD_DATA);
 function App() {
-  const [foodData, setFoodData] = useState([]);
-  const [foodEdit, setFoodEdit] = useState({
-    name: '',
-    src: '',
-    recipe: '',
-  });
-
-  // useEffect(() => {
-  //   window.localStorage.setItem('foodData', JSON.stringify(data));
-  // }, [foodData]);
-
-  useEffect(() => {
-    const dataitems = JSON.parse(localStorage.getItem('foodData'));
-    setFoodData(dataitems);
-  }, []);
-
-  return (
-    <MyContext.Provider
-      value={{ foodData, setFoodData, foodEdit, setFoodEdit }}
-    >
-      <Home />
-    </MyContext.Provider>
-  );
+  return <Home />;
 }
 
 export default App;

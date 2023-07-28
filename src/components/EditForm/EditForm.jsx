@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import React, { useContext } from 'react';
+import React from 'react';
 import '../ARMZ.css';
-import { getFoodStorage, updateFoodStorage } from '../../services/utils';
-import MyContext from '../../context/FoodContext';
+import { getFromLocalStorage, saveToLocalStorage } from '../../services/utils';
+import { useMyContext } from '../../context/FoodContext';
 
 function EditForm({ setShowForm }) {
-  const { setFoodData, foodEdit, setFoodEdit } = useContext(MyContext);
+  const { setFoodData, foodEdit, setFoodEdit } = useMyContext();
 
   const handleFileUpload = (e) => {
     const url = URL.createObjectURL(e.target.files[0]);
@@ -18,7 +18,7 @@ function EditForm({ setShowForm }) {
       return;
     }
     const foodName = JSON.parse(sessionStorage.getItem('foodName'));
-    const prevData = getFoodStorage();
+    const prevData = getFromLocalStorage('foodData');
 
     const localData = prevData.map((item) => {
       if (item.name === foodName) return foodEdit;
@@ -28,7 +28,7 @@ function EditForm({ setShowForm }) {
 
     sessionStorage.removeItem('foodName');
 
-    updateFoodStorage(localData);
+    saveToLocalStorage('foodData', localData);
     setFoodData(localData);
 
     setShowForm({

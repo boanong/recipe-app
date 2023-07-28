@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/prop-types */
-import React, { useContext } from 'react';
+import React from 'react';
 import './RecipeCard.css';
-import MyContext from '../context/FoodContext';
+import { useMyContext } from '../context/FoodContext';
 
 function RecipeCard({ image, name, deleteRecipe, setShowForm }) {
-  const { foodData, setFoodEdit } = useContext(MyContext);
+  const { foodData, setFoodEdit } = useMyContext();
   const recipeCardStyle = {
     background: 'white',
   };
