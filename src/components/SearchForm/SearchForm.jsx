@@ -9,8 +9,8 @@ export default function SearchForm() {
 
   const handleSearch = () => {
     const prevData = foodData;
-    const searchRes = prevData.filter((food) =>
-      food.name.includes(searchVal.trim())
+    const searchRes = prevData.filter(({ name }) =>
+      name.toLowerCase().trim().includes(searchVal.trim().toLowerCase())
     );
 
     setFoodData([...searchRes]);

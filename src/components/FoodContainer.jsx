@@ -1,9 +1,5 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable react/jsx-no-comment-textnodes */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable no-param-reassign */
-/* eslint-disable react/no-array-index-key */
-// eslint-disable-next-line no-unused-vars
 import { useState } from 'react';
 import { useMyContext } from '../context/FoodContext';
 import ARMZ from './ARMZ';
@@ -30,12 +26,13 @@ export default function FoodContainer() {
       {showForm.createNew && <ARMZ setShowForm={setShowForm} />}
       {showForm.editForm && <EditForm setShowForm={setShowForm} />}
       <div className="cards">
-        {foodData?.map((item, index) => {
+        {foodData?.map((item) => {
           return (
             <RecipeCard
-              key={item.name + index}
+              key={item.name}
               image={item.src}
               name={item.name}
+              fav={item.fav}
               deleteRecipe={() => deleteRecipe(item.name)}
               setShowForm={setShowForm}
             />

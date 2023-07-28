@@ -3,10 +3,12 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './RecipeCard.css';
+import { AiOutlineHeart } from 'react-icons/ai';
 import { useMyContext } from '../context/FoodContext';
+import { getFromLocalStorage, saveToLocalStorage } from '../services/utils';
 
-function RecipeCard({ image, name, deleteRecipe, setShowForm }) {
-  const { foodData, setFoodEdit } = useMyContext();
+function RecipeCard({ image, fav, name, deleteRecipe, setShowForm }) {
+  const { foodData, setFoodEdit, setFoodData } = useMyContext();
   const recipeCardStyle = {
     background: 'white',
   };
@@ -21,6 +23,16 @@ function RecipeCard({ image, name, deleteRecipe, setShowForm }) {
     });
   };
 
+  const toggleFavourites = () => {
+    const update = getFromLocalStorage('foodData').map((food) => {
+      if (food.name === name) return { ...food, fav: !food.fav };
+      return food;
+    });
+
+    saveToLocalStorage('foodData', update);
+    setFoodData([...update]);
+  };
+
   return (
     <div className="reciperCard" style={recipeCardStyle}>
       <div className="imagediv">
@@ -32,6 +44,13 @@ function RecipeCard({ image, name, deleteRecipe, setShowForm }) {
           <button type="button" onClick={deleteRecipe}>
             Delete Recipe
           </button>
+          <span
+            className="icon_span"
+            style={{ color: fav ? 'red' : 'unset' }}
+            onClick={toggleFavourites}
+          >
+            <AiOutlineHeart />
+          </span>
           <div>
             <i className="fas fa-edit" onClick={handleEdit} />
           </div>

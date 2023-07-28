@@ -10,6 +10,7 @@ export function MyContextProvider({ children }) {
     name: '',
     src: '',
     recipe: '',
+    fav: false,
   });
 
   useEffect(() => {
