@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-constructed-context-values */
 import { createContext, useContext, useEffect, useState } from 'react';
+import { getFromLocalStorage } from '../services/utils';
 
 const MyContext = createContext();
 
@@ -14,7 +15,7 @@ export function MyContextProvider({ children }) {
   });
 
   useEffect(() => {
-    const dataitems = JSON.parse(localStorage.getItem('foodData'));
+    const dataitems = getFromLocalStorage('foodData');
     setFoodData(dataitems);
   }, []);
 

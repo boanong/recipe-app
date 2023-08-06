@@ -5,10 +5,10 @@ import { getFromLocalStorage } from '../../services/utils';
 
 export default function SearchForm() {
   const [searchVal, setSearchVal] = useState('');
-  const { foodData, setFoodData } = useMyContext();
+  const { setFoodData } = useMyContext();
 
   const handleSearch = () => {
-    const prevData = foodData;
+    const prevData = getFromLocalStorage('foodData');
     const searchRes = prevData.filter(({ name }) =>
       name.toLowerCase().trim().includes(searchVal.trim().toLowerCase())
     );

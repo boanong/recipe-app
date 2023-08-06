@@ -3,8 +3,21 @@ import './Home.css';
 import heroimage from './heroimage.png';
 import FoodContainer from '../components/FoodContainer';
 import SearchForm from '../components/SearchForm/SearchForm';
+import { useMyContext } from '../context/FoodContext';
+import { getFromLocalStorage, saveToLocalStorage } from '../services/utils';
 
 function Home() {
+  const { foodData, setFoodData } = useMyContext();
+
+  const deleteRecipe = (name) => {
+    const update = getFromLocalStorage('foodData').filter(
+      (food) => food.name !== name
+    );
+
+    saveToLocalStorage('foodData', update);
+    setFoodData([...update]);
+  };
+
   return (
     <div>
       <div className="landing">
@@ -42,7 +55,7 @@ function Home() {
       <div className="background">
         <div className="background-overlay" />
 
-        <FoodContainer />
+        <FoodContainer displayData={foodData} deleteRecipe={deleteRecipe} />
 
         <p className="begin-your-journey">
           Begin your journey to eating healthy{' '}
