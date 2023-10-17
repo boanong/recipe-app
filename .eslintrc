@@ -1,7 +1,7 @@
 {
   "env": {
     "root": true,
-  "disable": true
+    **"disable": true**
   },
   "extends": [
     "plugin:react/recommended",
@@ -21,7 +21,7 @@
       {
         "extensions": [".js", ".jsx"]
       }
-    ], 
+    ],
     "prettier/prettier": ["error", { "endOfLine": "auto" }]
   }
 }

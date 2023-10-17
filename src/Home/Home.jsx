@@ -6,6 +6,7 @@ import SearchForm from '../components/SearchForm/SearchForm';
 import { useMyContext } from '../context/FoodContext';
 import { getFromLocalStorage, saveToLocalStorage } from '../services/utils';
 import Footer from '../components/Footer/Footer';
+import SecondFooter from '../components/Footer/SecondFooter';
 
 function Home() {
   const { foodData, setFoodData } = useMyContext();
@@ -89,6 +90,7 @@ function Home() {
         />
       </div>
       <Footer />
+      <SecondFooter />
     </div>
   );
 }

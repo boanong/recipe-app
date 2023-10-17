@@ -104,21 +104,9 @@
 }
 
 @media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-  }
 
-  .footer-column {
-    width: 100%;
-  }
-}
-
-
-  @media (max-width: 768px) {
     .footer {
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      margin-top: 1500px;
+        display: none;
     }
+  
   }
