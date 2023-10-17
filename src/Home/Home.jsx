@@ -5,6 +5,7 @@ import FoodContainer from '../components/FoodContainer';
 import SearchForm from '../components/SearchForm/SearchForm';
 import { useMyContext } from '../context/FoodContext';
 import { getFromLocalStorage, saveToLocalStorage } from '../services/utils';
+import Footer from '../components/Footer/Footer';
 
 function Home() {
   const { foodData, setFoodData } = useMyContext();
@@ -49,9 +50,7 @@ function Home() {
           </div>
         </div>
       </div>
-
       <SearchForm />
-
       <div className="background">
         <div className="background-overlay" />
 
@@ -89,52 +88,7 @@ function Home() {
           className="cook"
         />
       </div>
-
-      <div className="footer">
-        <div className="left-content">
-          <div className="our-recipe">
-            <h1>
-              Our recipe with a spice of <br />
-              your <span className="creativity"> CREATIVITY </span>{' '}
-            </h1>
-          </div>
-          <div className="book">
-            <h3>BOOK A COACH</h3>
-          </div>
-        </div>
-        <hr className="line" />
-        <div className="all-last-footers">
-          <div className="last-footers">
-            <h2> We exist to </h2>
-            <p>
-              Foster healthy eating lifestyles <br /> amongst people across the
-              world{' '}
-            </p>
-          </div>
-          <div className="last-footers">
-            <h2>Quick Menu </h2>
-            <p>
-              Have a quick look at <br /> our menu for the day{' '}
-            </p>
-          </div>
-          <div className="contact">
-            <div className="contact__links">
-              <i className="fa-sharp fa-solid fa-location-dot" />{' '}
-              <p>Long Street Buea </p>
-            </div>
-            <div className="contact__links">
-              <i className="fa-solid fa-envelope" />{' '}
-              <p>boanongjoshua@gmail.com</p>
-            </div>
-          </div>
-        </div>
-        <div className="icons">
-          <i className="fa-brands fa-twitter" />
-          <i className="fa-brands fa-instagram" />
-          <i className="fa-brands fa-facebook" />
-          <i className="fa-brands fa-tiktok" />
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 }

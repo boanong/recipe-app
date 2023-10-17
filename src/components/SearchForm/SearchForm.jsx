@@ -27,7 +27,7 @@ export default function SearchForm() {
       <div className="search__input">
         <input
           type="search"
-          className="search"
+          className="search-bar"
           placeholder="Search a recipe"
           value={searchVal}
           onChange={(e) => setSearchVal(e.target.value)}
