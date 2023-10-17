@@ -32,3 +32,21 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media (max-width: 768px) {
+    .recipeCard {
+      width: 100%;
+      height: auto;
+    }
+  
+    .imagediv {
+      width: 100%;
+      height: auto;
+    }
+  
+    .detailsdiv {
+      font-size: 16px;
+      line-height: 8px;
+    }
+  }
+  

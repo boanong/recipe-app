@@ -268,3 +268,87 @@ h1 {
 .icons {
   padding-left: 70px;
 }
+
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    height: 60px;
+  }
+
+  .landing {
+    height: 400px;
+  }
+
+  .landing-page-elements {
+    flex-direction: column;
+  }
+
+  .hero-image {
+    padding-right: 0;
+    width: 100%;
+  }
+
+  /* Food cards */
+  .cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card1 {
+    height: 30vh;
+    width: 100%;
+  }
+
+  /* Reviews */
+  .cook {
+    height: 30vh;
+    width: 30vh;
+  }
+
+  .cook-smiling {
+    height: 40vh;
+    width: 40vh;
+  }
+
+  /* Footer */
+  .footer {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Navbar */
+  .navbar {
+    height: 50px;
+  }
+
+  .landing {
+    height: 300px;
+  }
+
+  /* Food cards */
+  .cards {
+    gap: 5px;
+  }
+
+  .card1 {
+    height: 25vh;
+    width: 100%;
+  }
+
+  /* Reviews */
+  .cook {
+    height: 25vh;
+    width: 25vh;
+  }
+
+  .cook-smiling {
+    height: 30vh;
+    width: 30vh;
+  }
+
+  /* Footer */
+  .footer {
+    height: 60vh;
+  }
+}
