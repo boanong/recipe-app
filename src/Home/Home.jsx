@@ -24,10 +24,18 @@ function Home() {
     <div>
       <div className="landing">
         <div className="navbar">
-          <div className="nav-elements">
-            <p className="nav-feature">Home</p> <p>Menu</p> <p>Services</p>{' '}
-            <p>About us </p>
-          </div>
+
+
+          <nav className="nav">
+            <ul className="nav-elements">
+              <li className="nav-link"><a href="/">Home</a></li>
+              <li className="nav-link"><a href="/menu">Menu</a></li>
+              <li className="nav-link"><a href="/services">Services</a></li>
+              <li className="nav-link"><a href="/about">About Us</a></li>
+            </ul>
+          </nav>
+
+
           <div className="icons">
             <i className="fa-brands fa-twitter" />
             <i className="fa-brands fa-square-instagram" />

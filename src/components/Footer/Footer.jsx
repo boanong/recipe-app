@@ -12,10 +12,14 @@ export default function Footer() {
               your <span className="creativity"> CREATIVITY </span>{' '}
             </h1>
           </div>
-          <div className="book">
-            <h3>BOOK A COACH</h3>
-          </div>
+
+          <button
+            type='button'
+            className='book-button'>
+            BOOK A COACH
+          </button>
         </div>
+
         <hr className="line" />
         <div className="all-last-footers">
           <div className="last-footers">
@@ -38,7 +42,7 @@ export default function Footer() {
             </div>
             <div className="contact__links">
               <i className="fa-solid fa-envelope" />{' '}
-              <p>boanongjoshua@gmail.com</p>
+              <p className='email-address'>boanongjoshua@gmail.com</p>
             </div>
           </div>
         </div>
