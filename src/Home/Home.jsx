@@ -72,12 +72,12 @@ function Home() {
       <div className="reviews">
         <h2>What our trainees say about us</h2>
         <img
-          src="https://cdn-ajggd.nitrocdn.com/kMoOFpDlsOVtlYJLrnSRNCQXaUFHZPTY/assets/images/optimized/rev-208c8fc/cdn-cgi/mirage/6f21bf30f97f6f529e3cf5606516e98ef4dc6dc3cdcfa34bec2bdfef4a9590db/1280/https://shotkit.com/wp-content/uploads/bb-plugin/cache/cool-profile-pic-matheus-ferrero-landscape.jpeg"
+          src="https://images.pexels.com/photos/3771120/pexels-photo-3771120.jpeg?auto=compress&cs=tinysrgb&w=600"
           alt="cook"
           className="cook"
         />
         <img
-          src="https://careersmaster.ug/app/uploads/careers/lCgFZg5Hsyo9T5JyKlnozblDrjxGaHdY.jpg"
+          src="https://media.istockphoto.com/id/510995759/photo/cute-female-baker-holding-a-baking-tray.jpg?s=612x612&w=0&k=20&c=Lfk0vOuzwj03LN19iRMTvHjLnIwMz6T5v4kwdDf1jNg="
           alt="cook"
           className="cook"
         />

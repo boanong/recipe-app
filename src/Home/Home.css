@@ -17,7 +17,6 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .landing {
@@ -124,7 +123,6 @@ h1 {
 
 ::placeholder {
   color: #ffffff;
-  text-transform: uppercase;
   font-size: larger;
 }
 
@@ -170,6 +168,8 @@ h1 {
   align-items: center;
   z-index: 3;
   transition: 0.3s;
+  border-radius: 15px;
+  
 }
 
 .card1:hover {
@@ -216,23 +216,24 @@ h1 {
   text-align: center;
 }
 
-.cook {
-  height: 40vh;
-  width: 40vh;
+ .cook {
+  height: 35vh;
+  width: 35vh;
   border-radius: 50%;
   padding: 30px;
-}
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+} 
 
 .cook-smiling {
-  height: 50vh;
-  width: 50vh;
+  height: 45vh;
+  width: 45vh;
   border-radius: 50%;
   padding: 30px;
   align-items: center;
   text-align: center;
 }
-
-
 
 .book:hover {
   background-color: rgb(232, 203, 160);
@@ -276,14 +277,19 @@ h1 {
     width: 100%;
   }
 
-  .nav-elements {
-    display: flex;
-    gap: 20px;
-    padding-left: 50px;
-    color: white;
-    margin-top: 1%;
-    font-size: 10pt;
+  .nav {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 20px;
+
   }
+
+  .nav-link {
+    margin-right: 0;
+  }
+  
 
   .icons {
     display: none;
@@ -315,7 +321,6 @@ h1 {
     margin: auto;
     left: 50%;
     right: 50%;
-
   }
 
 
@@ -323,7 +328,6 @@ h1 {
     display: none;
 
   }
-
 
   /* Food cards */
   .cards {
@@ -338,7 +342,7 @@ h1 {
 
   /* Reviews */
   .cook {
-    height: 30vh;
+    height: 80vh;
     width: 30vh;
   }
 
@@ -347,13 +351,18 @@ h1 {
     width: 40vh;
   }
 
-
 }
 
 @media (max-width: 576px) {
   /* Navbar */
   .navbar {
     height: 50px;
+  }
+
+  .nav-link {
+    margin-right: 0;
+    justify-content: center;
+    left: 0;
   }
 
   .landing {
