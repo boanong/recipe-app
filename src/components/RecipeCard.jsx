@@ -11,6 +11,9 @@ function RecipeCard({ image, fav, name, deleteRecipe, setShowForm }) {
   const { foodData, setFoodEdit, setFoodData } = useMyContext();
   const recipeCardStyle = {
     background: 'white',
+    borderRadius: '7px',
+    
+    
   };
 
   const handleEdit = () => {

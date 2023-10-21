@@ -1,7 +1,5 @@
 {
   "env": {
-    "root": true,
-    **"disable": true**
   },
   "extends": [
     "plugin:react/recommended",

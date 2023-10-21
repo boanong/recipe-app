@@ -10,6 +10,7 @@ body {
 h1 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .navbar {
   height: 80px;
   width: 100%;
@@ -169,7 +170,7 @@ h1 {
   z-index: 3;
   transition: 0.3s;
   border-radius: 15px;
-  
+
 }
 
 .card1:hover {
@@ -216,7 +217,7 @@ h1 {
   text-align: center;
 }
 
- .cook {
+.cook {
   height: 35vh;
   width: 35vh;
   border-radius: 50%;
@@ -224,7 +225,7 @@ h1 {
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
-} 
+}
 
 .cook-smiling {
   height: 45vh;
@@ -268,6 +269,7 @@ h1 {
 }
 
 @media (max-width: 768px) {
+
   /* Navbar */
   .navbar {
     height: 60px;
@@ -283,13 +285,11 @@ h1 {
     text-align: center;
     margin-left: 0;
     margin-right: 20px;
-
   }
 
   .nav-link {
     margin-right: 0;
   }
-  
 
   .icons {
     display: none;
@@ -301,35 +301,36 @@ h1 {
   }
 
   .landing {
-    height: 400px;
+    height: 500px;
   }
 
   .landing-page-elements {
     flex-direction: column;
   }
 
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 35px;
+  }
+
   .heroimage {
-    width: 50%;
-    height: 50%;
-    margin-left: 100px;
+    width: 95%;
+    height: 95%;
     padding: 5%;
-    
   }
 
   .hero {
     font-size: x-large;
-    margin: auto;
     left: 50%;
     right: 50%;
   }
 
-
   .tagline {
     display: none;
-
   }
 
-  /* Food cards */
   .cards {
     flex-direction: column;
     gap: 10px;
@@ -354,6 +355,7 @@ h1 {
 }
 
 @media (max-width: 576px) {
+
   /* Navbar */
   .navbar {
     height: 50px;
@@ -365,8 +367,44 @@ h1 {
     left: 0;
   }
 
-  .landing {
-    height: 300px;
+  .background {
+    background-image: none !important;
+    /* Remove the background image */
+    gap: 50px;
+  }
+
+  .background-overlay {
+    display: none;
+  }
+
+  .left-side-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+
+  }
+
+  .hero {
+    width: 80%;
+    text-align: center;
+
+    br {
+      display: none;
+    }
+
+    span {
+      display: none;
+    }
+  }
+
+  .get-start {
+    padding: 10px 3.4rem;
+    background-color: rgba(232, 82, 42, 1);
+    color: white;
+    margin-top: 10px;
+    font-size: large;
+    border-radius: 50px;
   }
 
   /* Food cards */
@@ -379,7 +417,10 @@ h1 {
     width: 100%;
   }
 
-  /* Reviews */
+  .reviews {
+    display: none;
+  }
+
   .cook {
     height: 25vh;
     width: 25vh;

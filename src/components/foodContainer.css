@@ -15,6 +15,7 @@
     z-index: 3;
 }
 
+
 .active-recipe {
     right: -100%;
     opacity: 1;
@@ -62,6 +63,10 @@
       width: 90%;
       right: 0;
       margin: 0 auto;
+    }
+
+    .cards {
+        gap: 30px;
     }
   
     .recipe ol {

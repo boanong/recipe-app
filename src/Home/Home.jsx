@@ -35,7 +35,6 @@ function Home() {
             </ul>
           </nav>
 
-
           <div className="icons">
             <i className="fa-brands fa-twitter" />
             <i className="fa-brands fa-square-instagram" />
